@@ -1,10 +1,11 @@
-import { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import CartContext from '../../store/card-context';
 import CartIcon from '../Cart/CartIcon';
 import classes from './HeaderCardButton.module.css';
 
 const HeaderCardButton = (props) => {
+  console.log('This button is re-rendered');
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
   const cartCtx = useContext(CartContext);
 
@@ -42,4 +43,4 @@ const HeaderCardButton = (props) => {
   );
 };
 
-export default HeaderCardButton;
+export default React.memo(HeaderCardButton);

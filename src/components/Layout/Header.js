@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import classes from './Header.module.css';
 import HeaderCardButton from './HeaderCardButton';
 
@@ -18,4 +18,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default React.memo(Header);

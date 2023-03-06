@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, memo } from 'react';
 
 import classes from './Cart.module.css';
 import Modal from '../UI/Modal';
@@ -9,7 +9,7 @@ const Cart = (props) => {
   const cardCtx = useContext(CartContext);
 
   const totalAmount = `$${cardCtx.totalAmount.toFixed(2)}`;
-  const hasItems = cardCtx.items.lengt > 0;
+  const hasItems = cardCtx.items.length > 0;
 
   const cartItemRemoveHanlder = (id) => {
     cardCtx.removeItem(id);
@@ -51,4 +51,4 @@ const Cart = (props) => {
   );
 };
 
-export default Cart;
+export default memo(Cart);
